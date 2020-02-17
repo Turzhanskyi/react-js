@@ -2,12 +2,13 @@ import React from 'react';
 import './App.css';
 
 function App() {
+  const divStyle = {
+    textAlign: 'center'
+  };
+
   return (
-      <div>
-        <div className="App">
-          <h1>Hello World!!!</h1>
-        </div>
-        <p>Hello</p>
+      <div style={divStyle}>
+        <h1 style={ {color: 'blue', fontSize: '20px'} }>Hello World!!!</h1>
       </div>
   );
 }
