@@ -21,3 +21,8 @@
 .input.red {
   border: 1px solid red;
 }
+
+.input.bold {
+  border: 2px solid green;
+  font-weight: bold;
+}
