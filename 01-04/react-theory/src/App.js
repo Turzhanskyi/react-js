@@ -34,10 +34,6 @@ class App extends Component {
   }
 
   render() {
-    const divStyle = {
-      textAlign: 'center'
-    };
-
     let cars = null;
 
     if (this.state.showCars) {
@@ -55,7 +51,7 @@ class App extends Component {
     }
 
     return (
-        <div style={divStyle}>
+        <div className={'divStyle'}>
           <h1>{this.state.pageTitle}</h1>
 
           <button
