@@ -1,21 +1,21 @@
-import React, {Component} from 'react';
-import './App.css';
+import React, { Component } from "react";
+import "./App.css";
 import Car from "./Car/Car";
 
 class App extends Component {
   state = {
     cars: [
-      {name: 'Ford', year: 2018},
-      {name: 'Audi', year: 2016},
-      {name: 'Mazda', year: 2010}
+      { name: "Ford", year: 2018 },
+      { name: "Audi", year: 2016 },
+      { name: "Mazda", year: 2010 }
     ],
-    pageTitle: 'React components'
+    pageTitle: "React components"
   };
 
   toggleCarsHandler = () => {
     this.setState({
       showCars: !this.state.showCars
-    })
+    });
   };
 
   onChangeName(name, index) {
@@ -23,14 +23,14 @@ class App extends Component {
     car.name = name;
     const cars = [...this.state.cars];
     cars[index] = car;
-    this.setState({cars})
+    this.setState({ cars });
   }
 
   deleteHandler(index) {
     const cars = this.state.cars.concat();
     cars.splice(index, 1);
 
-    this.setState({cars})
+    this.setState({ cars });
   }
 
   render() {
@@ -39,35 +39,34 @@ class App extends Component {
     if (this.state.showCars) {
       cars = this.state.cars.map((car, index) => {
         return (
-            <Car
-                key={index}
-                name={car.name}
-                year={car.year}
-                onDelete={this.deleteHandler.bind(this, index)}
-                onChangeName={event => this.onChangeName(event.target.value, index)}
-            />
-        )
-      })
+          <Car
+            key={index}
+            name={car.name}
+            year={car.year}
+            onDelete={this.deleteHandler.bind(this, index)}
+            onChangeName={event => this.onChangeName(event.target.value, index)}
+          />
+        );
+      });
     }
 
     return (
-        <div className={'divStyle'}>
-          <h1>{this.state.pageTitle}</h1>
+      <div className={"divStyle"}>
+        {/* <h1>{this.state.pageTitle}</h1> */}
+        <h1>{this.props.title}</h1>
 
-          <button
-              onClick={this.toggleCarsHandler}
-          >Toggle cars
-          </button>
+        <button onClick={this.toggleCarsHandler}>Toggle cars</button>
 
-          <div style={{
+        <div
+          style={{
             width: 400,
-            margin: 'auto',
-            paddingTop: '20px'
-          }}>
-            {cars}
-          </div>
-
+            margin: "auto",
+            paddingTop: "20px"
+          }}
+        >
+          {cars}
         </div>
+      </div>
     );
   }
 }
