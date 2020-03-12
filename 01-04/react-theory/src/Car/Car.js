@@ -3,18 +3,18 @@ import React from "react";
 import "./Car.css";
 
 class Car extends React.Component {
-  componentWillReceiveProps(nextProps) {
-    console.log("Car componentWillReceiveProps", nextProps);
-  }
+  // componentWillReceiveProps(nextProps) {
+  //   console.log("Car componentWillReceiveProps", nextProps);
+  // }
 
   shouldComponentUpdate(nextProps, nextState) {
     console.log("Car shouldComponentUpdate", nextProps, nextState);
     return nextProps.name.trim() !== this.props.name.trim();
   }
 
-  componentWillUpdate(nextProps, nextState) {
-    console.log("Car componentWillUpdate", nextProps, nextState);
-  }
+  // componentWillUpdate(nextProps, nextState) {
+  //   console.log("Car componentWillUpdate", nextProps, nextState);
+  // }
 
   // static getDerivedFromProps(nextProps, prevState) {
   //   console.log("Car getDerivedFromProps", nextProps, prevState);
